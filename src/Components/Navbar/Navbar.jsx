@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import NavItem from "../NavItem/NavItem";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { GiShoppingBag } from "react-icons/gi";
+import { SideContext } from "../../Context/SideContext";
 
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState(false);
+    const {open, setOpen} = useContext(SideContext)
     useEffect(()=>{
         window.addEventListener("scroll", ()=>{
             window.scrollY > 40 ? setActive(true): setActive(false)
@@ -30,7 +32,7 @@ const Navbar = () => {
                 {menuOpen ? <MdClose/>:<MdMenu/>}
             </div>
             {/* shopping bag */}
-            <Link className="flex relative">
+            <Link onClick={()=>setOpen(!open)} className="flex relative">
             <GiShoppingBag className="text-[25px]"/>
             <span className="bg-secondary text-white text-sm absolute -top-2.5 -right-2.5 flexCenter w-5 h-5 rounded-full shadow-md">0</span>
             </Link>

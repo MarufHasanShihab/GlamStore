@@ -1,5 +1,6 @@
 import Hero from "../../Components/Hero/Hero";
 import Shop from "../../Components/Shop/Shop";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Hero/>
             <Shop/>
+            <Sidebar/>
         </div>
     );
 };

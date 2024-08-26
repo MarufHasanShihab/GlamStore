@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types"
 
-export const ProductsContext = createContext()
+export const ProductsContext = createContext(null)
 const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([])
     useEffect(()=>{
