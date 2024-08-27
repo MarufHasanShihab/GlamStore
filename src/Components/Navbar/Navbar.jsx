@@ -4,12 +4,14 @@ import { useContext, useEffect, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { GiShoppingBag } from "react-icons/gi";
 import { SideContext } from "../../Context/SideContext";
+import useCart from "../hooks/useCart";
 
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState(false);
     const {open, setOpen} = useContext(SideContext)
+    const {totalQuantity} = useCart()
     useEffect(()=>{
         window.addEventListener("scroll", ()=>{
             window.scrollY > 40 ? setActive(true): setActive(false)
@@ -34,7 +36,7 @@ const Navbar = () => {
             {/* shopping bag */}
             <Link onClick={()=>setOpen(!open)} className="flex relative">
             <GiShoppingBag className="text-[25px]"/>
-            <span className="bg-secondary text-white text-sm absolute -top-2.5 -right-2.5 flexCenter w-5 h-5 rounded-full shadow-md">0</span>
+            <span className="bg-secondary text-white text-sm absolute -top-2.5 -right-2.5 flexCenter w-5 h-5 rounded-full shadow-md">{totalQuantity}</span>
             </Link>
             {/* login button */}
             <button className="btn-outline rounded-full hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300">Login</button>

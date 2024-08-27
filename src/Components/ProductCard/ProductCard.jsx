@@ -1,13 +1,12 @@
 import { FaLink, FaPlus, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
+import useCart from "../hooks/useCart";
 
 const ProductCard = ({ product }) => {
   const { id, image, category, title, description, price, rating } =
     product || {};
-  const {handleAddCart} = useContext(CartContext)
+    const {addToCart} = useCart()
   return (
     <div className="bg-white ring ring-slate-900/5 rounded-xl group">
       <div className="bg-white flexCenter m-1.5  py-10 rounded-xl ring ring-slate-200/20 shadow-sm relative">
@@ -40,7 +39,7 @@ const ProductCard = ({ product }) => {
           >
             <FaLink className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer" />
           </Link>
-          <FaPlus onClick={()=>handleAddCart(product)} className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer" />
+          <FaPlus onClick={()=> addToCart(product)} className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer" />
         </div>
       </div>
       <div className="p-3">

@@ -89,7 +89,7 @@ html{
   }
 
   .btn-light  { 
-    @apply  medium-15 bg-primary px-7 py-2.5 text-tertiary
+    @apply  medium-15 bg-gray-200 px-7 py-2.5 text-tertiary
   }
   .btn-dark  { 
     @apply  medium-15 bg-tertiary px-7 py-2.5 text-white
