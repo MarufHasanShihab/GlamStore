@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
-        <section className="max-padd-container bg-hero bg-cover bg-center bg-no-repeat h-[700px] w-full">
+        <section id="hero" className="max-padd-container bg-hero bg-cover bg-center bg-no-repeat h-[700px] w-full">
             <div className="relative mx-w-[777px] top-44 xs:top-56">
                 <h4 className="h1 max-w-[611px] capitalize">Elevate your wardrobe with trendy fashion from <span className="text-secondary">GlamStore</span></h4>
                 <div className=" gap-x-9 mt-8">

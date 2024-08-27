@@ -34,10 +34,10 @@ const Navbar = () => {
                 {menuOpen ? <MdClose/>:<MdMenu/>}
             </div>
             {/* shopping bag */}
-            <Link onClick={()=>setOpen(!open)} className="flex relative">
+            <div onClick={()=>setOpen(!open)} className="flex relative cursor-pointer">
             <GiShoppingBag className="text-[25px]"/>
             <span className="bg-secondary text-white text-sm absolute -top-2.5 -right-2.5 flexCenter w-5 h-5 rounded-full shadow-md">{totalQuantity}</span>
-            </Link>
+            </div>
             {/* login button */}
             <button className="btn-outline rounded-full hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300">Login</button>
             </div>
